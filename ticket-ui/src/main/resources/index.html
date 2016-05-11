@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Toms Booking App</h1>
+
+<h2>Latest Bookings</h2>
+<table id="bookingtable">
+<tr><th>Flight</th><th>Customer</th></tr>
+</table>
+
+<div id="newbooking">
+    <form id="target" action="destination.html">
+        <label>Flight:</label>
+        <input name="flight"/>
+        <label>Customer:</label>
+        <input name="customer"/>
+        <input type="submit" value="Go">
+    </form>
+</div>
+<script>
+    getBookings();
+    $( "#target" ).submit(function( event ) {
+        alert( "Handler for .submit() called." );
+        event.preventDefault();
+        postBooking();
+    });
+    function postBooking(){
+        var flight = $('input[name=flight]').val();
+        var customer = $('input[name=customer]').val();
+        $.ajax({
+            url:"http://localhost:8181/cxf/rest/core/booking",
+            type:"POST",
+            data:'["org.apache.rest.BookingImpl",{"id":-1047078535475788603,"customer":"'+customer+'","flight":"'+flight+'","status":"WAITING"}]',
+            contentType:"application/json; charset=utf-8",
+            dataType:"json",
+            success: function(){
+            }
+        })
+
+    }
+    function getBookings(){
+        $.getJSON( "http://localhost:8181/cxf/rest/core/booking", function( data ) {
+            var items = [];
+            $.each( data, function( key, val ) {
+                $.each(val, function(k, v){
+                    if(typeof v !== "string"){
+                        $('#bookingtable tr:last').after( "<tr><td>"+v.flight+"</td><td>"+v.customer+"</td></tr>" );
+                    }
+                });
+
+            });
+
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+        });
+    }
+</script>
+</body>
+</html>

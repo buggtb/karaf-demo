@@ -1,0 +1,35 @@
+<blueprint default-activation="eager"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+  http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+  http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd">
+
+
+    <reference id="bookingService" interface="org.apache.tickets.BookingService"/>
+    <bean id="bookingRest" class="org.apache.rest.BookingEndpointsImpl">
+        <property name="bookingService" ref="bookingService"/>
+    </bean>
+
+    <bean id="cxfServlet" class="org.apache.cxf.transport.servlet.CXFServlet"/>
+
+    <bean id="jacksonMapper" class="org.apache.rest.JacksonConfig">
+
+    </bean>
+
+    <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+        <argument ref="jacksonMapper"/>
+    </bean>
+
+    <jaxrs:server id="taskService" address="/rest/core">
+        <jaxrs:serviceBeans>
+            <ref component-id="bookingRest"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+        <!-- Binding Providers -->
+        <ref component-id="jsonProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+</blueprint>

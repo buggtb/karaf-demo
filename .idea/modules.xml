@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ticket-api/ticket-api.iml" filepath="$PROJECT_DIR$/ticket-api/ticket-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-feature/ticket-feature.iml" filepath="$PROJECT_DIR$/ticket-feature/ticket-feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-parent.iml" filepath="$PROJECT_DIR$/ticket-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-persistence/ticket-persistence.iml" filepath="$PROJECT_DIR$/ticket-persistence/ticket-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-rest/ticket-rest.iml" filepath="$PROJECT_DIR$/ticket-rest/ticket-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-service/ticket-service.iml" filepath="$PROJECT_DIR$/ticket-service/ticket-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-ui/ticket-ui.iml" filepath="$PROJECT_DIR$/ticket-ui/ticket-ui.iml" />
+    </modules>
+  </component>
+</project>
