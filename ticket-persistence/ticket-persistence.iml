@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
+  <component name="FacetManager">
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="ticket-persistence-1.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="ticket-persistence" bundleVersion="1.0-SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Description" value="ticket-persistence OSGi bundle project." />
+          <property key="Meta-Persistence" value="META-INF/persistence.xml" />
+          <property key="Export-Package" value="org.apache.booking.*;version=1.0-SNAPSHOT" />
+          <property key="Import-Package" value="*,org.hibernate.proxy, javassist.util.proxy" />
+          <property key="Bundle-Name" value="ticket-persistence Bundle" />
+          <property key="Include-Resource" value="META-INF/persistence.xml=$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">

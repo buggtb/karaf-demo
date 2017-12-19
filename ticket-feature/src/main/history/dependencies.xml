@@ -8,12 +8,14 @@
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-hibernate4/2.5.4</bundle>
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.5.4</bundle>
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.5.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.5.4</bundle>
         <bundle>mvn:javax.interceptor/javax.interceptor-api/1.2</bundle>
         <bundle>mvn:javax.transaction/javax.transaction-api/1.2</bundle>
         <bundle>mvn:org.apache/ticket-api/1.0-SNAPSHOT</bundle>
         <bundle>mvn:org.apache/ticket-persistence/1.0-SNAPSHOT</bundle>
         <bundle>mvn:org.apache/ticket-rest/1.0-SNAPSHOT</bundle>
         <bundle>mvn:org.apache/ticket-service/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.apache/ticket-ui/1.0-SNAPSHOT</bundle>
         <bundle>mvn:org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final</bundle>
         <bundle>wrap:mvn:javax.inject/javax.inject/1</bundle>
     </feature>
